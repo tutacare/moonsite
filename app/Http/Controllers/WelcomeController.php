@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function __invoke()
     {
-        $posts = Post::all();
+        $posts = Post::take(4)->orderBy('created_at', 'DESC')->get();
         return view('welcome', compact('posts'));
 
     }

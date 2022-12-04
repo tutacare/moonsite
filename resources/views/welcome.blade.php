@@ -18,19 +18,19 @@
                             <!-- Blog Post -->
                             <div class="blog grid-blog">
                                 <div class="blog-image">
-                                    <a href="blog-details"><img class="img-fluid" src="/assets/img/blog/blog-01.jpg" alt="Post Image"></a>
+                                    <a href="blog-details"><img class="img-fluid" src="/storage/{{ str_replace('.jpg','-small.jpg', $post->image) }}" alt="Post Image"></a>
                                 </div>
                                 <div class="blog-content">
                                     <ul class="entry-meta meta-item">
                                         <li>
                                             <div class="post-author">
-                                                <a href="blog-details"><span>Tyrone Roberts</span></a>
+                                                <a href="blog-details"><span>{{ $post->Author->name }}</span></a>
                                             </div>
                                         </li>
-                                        <li><i class="far fa-clock"></i> 4 Dec 2019</li>
+                                        <li><i class="far fa-clock"></i> {{ $post->created_at->diffForHumans() }}</li>
                                     </ul>
                                     <h3 class="blog-title"><a href="blog-details">{{ $post->title }}</a></h3>
-                                    <p class="mb-0">{{ $post->excerpt }}</p>
+                                    <p class="mb-0">{{ Str::limit($post->excerpt, 130) }}</p>
                                 </div>
                             </div>
                             <!-- /Blog Post -->

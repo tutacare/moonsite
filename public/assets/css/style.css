@@ -6131,8 +6131,8 @@ html.menu-opened body {
 	margin-bottom: 10px;
 }
 .grid-blog .entry-meta li:last-child {
-	flex: 0 0 150px;
-	max-width: 150px;
+	flex: 0 0 200px;
+	max-width: 200px;
 }
 .grid-blog .post-author {
     width: 189px;

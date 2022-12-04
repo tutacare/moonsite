@@ -34,12 +34,7 @@
 								<i class="fas fa-times"></i>
 							</a>
 						</div>
-						<ul class="main-nav">
-							<li class="{{ Request::is('index') ? 'active' : '' }}">
-								<a href="index">Home</a>
-							</li>
-							
-						</ul>		 
+						{!! menu('main', 'menu.main') !!}	 
 					</div>		 
 					<ul class="nav header-navbar-rht">
 					@if(Route::is(['pagee','mentor-register','mentee-register']))
