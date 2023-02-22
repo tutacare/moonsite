@@ -1,5 +1,15 @@
 @extends('layout.mainlayout')
-@section('content')                 
+
+@push('styles')
+<style type="text/css">
+.responsive {
+    width: 100%;
+    height: auto;
+}
+</style>
+@endpush
+
+@section('content')            
             <!-- Blog Section -->
            <section class="section section-blogs">
                 <div class="container">
@@ -18,7 +28,7 @@
                             <!-- Blog Post -->
                             <div class="blog grid-blog">
                                 <div class="blog-image">
-                                    <a href="blog-details"><img class="img-fluid" src="/storage/{{ str_replace('.jpg','-small.jpg', $post->image) }}" alt="Post Image"></a>
+                                    <a href="/berita/{{ $post->slug }}"><img class="img-fluid" src="/storage/{{ str_replace('.jpg','-small.jpg', $post->image) }}" alt="Post Image"></a>
                                 </div>
                                 <div class="blog-content">
                                     <ul class="entry-meta meta-item">
@@ -29,7 +39,7 @@
                                         </li>
                                         <li><i class="far fa-clock"></i> {{ $post->created_at->diffForHumans() }}</li>
                                     </ul>
-                                    <h3 class="blog-title"><a href="blog-details">{{ $post->title }}</a></h3>
+                                    <h3 class="blog-title"><a href="/berita/{{ $post->slug }}">{{ $post->title }}</a></h3>
                                     <p class="mb-0">{{ Str::limit($post->excerpt, 130) }}</p>
                                 </div>
                             </div>
